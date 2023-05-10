@@ -1,18 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 const { v4: uuidv4 } = require('uuid');
 
-class User extends Model {
-   checkPassword(passwordInput) {
-     return bcrypt.compareSync(passwordInput, this.password);
-   }
- }
+class Shelf extends Model {};
 
- // USE UUID WITH PRIMARY KEY?
+// copied logic still needs adjusting
 
- User.init(
+User.init(
    {
+
+
+
      id: uuidv4(),
      name: {
        type: DataTypes.STRING,
@@ -58,5 +56,3 @@ class User extends Model {
      modelName: 'user',
    }
  );
- 
- module.exports = User;
