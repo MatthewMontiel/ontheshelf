@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
-const { v4: uuidv4 } = require("uuid");
 
 class User extends Model {
   checkPassword(passwordInput) {
@@ -9,15 +8,13 @@ class User extends Model {
   }
 }
 
-// USE UUID WITH PRIMARY KEY?
-
 User.init(
   {
-    id: {
-      type: sequelize.UUID,
-      defaultValue: sequelize.UUIDV4,
+   id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
