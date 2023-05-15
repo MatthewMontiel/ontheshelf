@@ -1,19 +1,23 @@
-const sequelize = require('../config/connection');
-const { User, GameShelf } = require('../models');
-
-const userData = require('./userData.json');
-// const projectData = require('./projectData.json');
-// put game stuff here
+const sequelize = require("../config/connection");
+const { User, Game } = require("../models");
+const userData = require("./userData.json");
+const gameData = require("./gameData.json");
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ force: true }); //confirm how works true v false
 
   const users = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
-// const gameshelf = await Gameshelf(gameshelf-data)
-  process.exit(0);
+  // check the syntax of game
+  for (const game of gameData) {
+    await Game.create({
+      ...game,
+      user_id: users[Math.floor(Math.random() * users.length)].id, //what is this generating if id is declared elsewhere
+    });
+    process.exit(0);
+  }
 };
 
 seedDatabase();
