@@ -14,9 +14,9 @@ router.post('/', authorize, async (req, res) => {
    } catch (err) {
      res.status(400).json(err);
    }
- });
+});
 
- router.delete('/:id', authorize, async (req, res) => {
+router.delete('/:id', authorize, async (req, res) => {
    try {
      const gameShelfData = await gameShelf.destroy({
        where: {
@@ -34,6 +34,6 @@ router.post('/', authorize, async (req, res) => {
    } catch (err) {
      res.status(500).json(err);
    }
- });
+});
  
- module.exports = router;
+module.exports = router;
