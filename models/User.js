@@ -10,7 +10,7 @@ class User extends Model {
 
 User.init(
   {
-   id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -37,7 +37,6 @@ User.init(
     },
   },
   {
-    // VINCENT DIG INTO BCRYPT
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);

@@ -1,14 +1,14 @@
 const User = require('./User');
-const GameShelf = require('./GameShelf');
+const Game = require('./Game');
 
 
-User.hasMany(GameShelf, {
+User.hasMany(Game, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-GameShelf.belongsTo(User, {
+Game.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, GameShelf };
+module.exports = { User, Game };
