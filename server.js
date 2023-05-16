@@ -47,6 +47,12 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 
+
+
+
+
+// below for testing only remember to delete before deploy
+
 // const path = require('path');
 // const express = require('express');
 // const session = require('express-session');
