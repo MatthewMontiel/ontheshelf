@@ -46,6 +46,13 @@ Game.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    userID: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
