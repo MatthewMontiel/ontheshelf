@@ -13,7 +13,7 @@ const seedDatabase = async () => {
   // check the syntax of game
   for (const game of gameData) {
     await Game.create({
-      ...game
+      ...game, 
       // user_id: users[Math.floor(Math.random() * users.length)].id, 
     });
     process.exit(0);
