@@ -20,3 +20,4 @@ if (process.env.JAWSDB_URL) {
 }
 // export sequelize
 module.exports = sequelize;
+// dasjgfnadkgn
