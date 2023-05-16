@@ -1,13 +1,23 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "css-build": "node-sass --omit-source-map-url --input ../public/sass/mystyles.scss --output ./css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "node server.js && npm run css-watch"
   },
   "name": "ontheshelf",
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
     "bulma": "^0.9.4",
+    "connect-session-sequelize": "^7.1.6",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "express-session": "^1.17.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.3.1",
+    "sequelize": "^6.31.1",
+    "serverjs": "^0.1.0",
     "uuid": "^9.0.0"
   },
   "repository": {
