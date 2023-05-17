@@ -1,13 +1,14 @@
 {
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url --input ../public/sass/mystyles.scss --output ./css/mystyles.css",
-    "css-watch": "npm run css-build -- --watch",
-    "start": "node server.js && npm run css-watch"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
   },
   "name": "ontheshelf",
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "bulma": "^0.9.4",
     "connect-session-sequelize": "^7.1.6",
     "dotenv": "^16.0.3",

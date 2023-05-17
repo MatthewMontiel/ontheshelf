@@ -1,42 +1,42 @@
 const router = require("express").Router();
-const authorize = require('../utils/authorize');
+const authorize = require("../utils/authorize");
 
 router.get("/", (req, res) => {
   res.render("homepage");
 });
 
-router.get("/", async (req, res) => {
-  try {
-    const gameData = await Game.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-      ],
-    });
+// router.get("/", async (req, res) => {
+//   try {
+//     const gameData = await Game.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ["name"],
+//         },
+//       ],
+//     });
 
-    const games = gameData.map((game) => game.get({ plain: true }));
+//     const games = gameData.map((game) => game.get({ plain: true }));
 
-    res.render("homepage");
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render("homepage");
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
-router.get('/shelf', authorize, async (req, res) => {
+router.get("/shelf", authorize, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.id, {
-      attributes: { exclude: ['password'] },
+      attributes: { exclude: ["password"] },
       include: [{ model: Game }],
     });
 
     const user = userData.get({ plain: true });
 
-    res.render('shelf', {
+    res.render("shelf", {
       ...user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
