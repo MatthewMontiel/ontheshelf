@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const authorize = require("../utils/authorize");
 
-router.get("/", (req, res) => {
-  res.render("homepage");
+ router.get("/", (req, res) => {
+   res.render("homepage");
 });
 
 // router.get("/", async (req, res) => {

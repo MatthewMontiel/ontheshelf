@@ -4,6 +4,7 @@
     "start": "node server.js",
     "seed": "node seeds/seed.js"
   },
+
   "name": "ontheshelf",
   "version": "1.0.0",
   "main": "server.js",
