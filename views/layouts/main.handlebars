@@ -1,43 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- incorporate bulma cdn here-->
-  <title>Project 2</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- incorporate bulma cdn here-->
+    <title>Project 2</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    {{! <link rel="stylesheet" href="/css/style.css">}}
+  <link rel="stylesheet" href="../../public/sass/mystyles.scss"> 
+  </head>
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-       <p> This is code!</p>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+    <header>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    {{!-- start of nav --}}
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/views/layouts/main.handlebars">
+      <img id="home" src="" width="112" height="28" />
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <!-- Link for long format instructions -->
+      <a class="navbar-item" href="">How to Use</a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <!-- Drop down list to links for other parts of the site -->
+        <a class="navbar-link">More</a>
+        <div class="navbar-dropdown">
+          <!-- Link to Development Team info -->
+          <a class="navbar-item" href="">The Team</a>
+          <!-- Link to Mission Statement -->
+          <a class="navbar-item" href="">Our Mission</a>
+          <!-- Link to Contact info -->
+          <a class="navbar-item" href="">Contact</a>
+          <hr class="navbar-divider" />
+        </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <strong id="tagline">Let's Play</strong>
+      </div>
+    </div>
+  </div>
+</nav>
+    {{! end of nav }}
+    </header>
+{{!-- handlebars go here --}}
+
+<main>
+{{!-- where the partials are going to show up --}}
+{{{ body }}}
+</main>
+
+
+<footer>
+
+</footer>
 </body>
+
+
 
 </html>
