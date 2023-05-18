@@ -4,7 +4,6 @@
     "start": "node server.js",
     "seed": "node seeds/seed.js"
   },
-
   "name": "ontheshelf",
   "version": "1.0.0",
   "main": "server.js",
@@ -33,7 +32,7 @@
     "url": "https://github.com/MatthewMontiel/ontheshelf/issues"
   },
   "homepage": "https://github.com/MatthewMontiel/ontheshelf#readme",
-  "description": "",
+  "description": "## *Table of Contents*",
   "devDependencies": {
     "node-sass": "^8.0.0"
   }
