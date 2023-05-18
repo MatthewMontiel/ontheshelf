@@ -17,35 +17,35 @@ Game.init(
     },
     genre: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     minplayers: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     maxplayers: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     difficulty: {
       /* droplist option maybe? */
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     ages: {
       /* droplist option maybe: all ages 6+ 10+ 13+ mature */
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     playtime: {
       /* droplist option maybe? */
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
-    comment: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+   //  comment: {
+   //    type: DataTypes.STRING,
+   //    allowNull: false,
+   //  },
     userID: {
       type: DataTypes.INTEGER,
       references: {
