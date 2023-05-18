@@ -1,6 +1,8 @@
+// required dependencies
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
+// game model to organize the shelf before table gets flipped
 class Game extends Model {}
 
 Game.init(
@@ -24,24 +26,22 @@ Game.init(
       allowNull: true,
     },
     difficulty: {
-      /* droplist option maybe? */
       type: DataTypes.STRING,
       allowNull: true,
     },
     ages: {
-      /* droplist option maybe: all ages 6+ 10+ 13+ mature */
       type: DataTypes.STRING,
       allowNull: true,
     },
     playtime: {
-      /* droplist option maybe? */
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-   //  comment: {
-   //    type: DataTypes.STRING,
-   //    allowNull: false,
-   //  },
+    // future enhancement to allow users to put in specific commentary judging the game on the shelf
+    // comment: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     userID: {
       type: DataTypes.INTEGER,
       references: {

@@ -2,7 +2,7 @@
   <div class="col-md-6">
     <h2>Login</h2>
 
-    <form class="form login-form">
+    <form id="member-form" class="form">
       <div class="form-group">
         <label for="email-login">email:</label>
         <input class="form-input" type="text" id="#submit-email" />
@@ -20,7 +20,7 @@
   <div class="col-md-6">
     <h2>Signup</h2>
 
-    <form class="form signup-form">
+    <form id="register-form" class="form">
       <div class="form-group">
         <label for="name-signup">name:</label>
         <input class="form-input" type="text" id="create-name" />
@@ -43,70 +43,3 @@
 {{!-- CHECK ON PATHING --}}
 
 <script src="../public/js/login.js"></script>
-
-
-
-
-
-
-{{!-- good below bad above --}}
-
-{{!-- <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-       <p> This is code!</p>
-      </h1>
-      <nav> --}}
-        {{!-- Conditionally render login or logout links --}}
-        {{!-- {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5"> --}}
-      <!-- Render the sub layout -->
-      {{!-- {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div> --}}
-
-{{!-- LOOK INTO ALL THIS --}}
-
-  {{!-- {{#if logged_in}}
-  <script src=""></script>
-  {{/if}}
-
-  <script src=""></script> --}}
-
-{{!-- this is for login --}}
-  {{!-- <div class="field">
-  <p class="control has-icons-left has-icons-right">
-    <input class="input" type="username" placeholder="Username">
-    <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i class="fas fa-check"></i>
-    </span>
-  </p>
-</div>
-<div class="field">
-  <p class="control has-icons-left">
-    <input class="input" type="password" placeholder="Password">
-    <span class="icon is-small is-left">
-      <i class="fas fa-lock"></i>
-    </span>
-  </p>
-</div>
-<div class="field">
-  <p class="control">
-    <button class="button is-success">
-      Login
-    </button>
-  </p>
-</div> --}}
