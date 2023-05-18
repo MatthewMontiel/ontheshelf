@@ -2,7 +2,7 @@ const router = require("express").Router();
 const authorize = require("../utils/authorize");
 
 router.get("/", (req, res) => {
-  res.render("homepage");
+  res.render("login");
 });
 
 // router.get("/", async (req, res) => {
