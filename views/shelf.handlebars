@@ -1,5 +1,117 @@
 {{!-- this view displays when logged in --}}
 
+{{#if games}}
+<table class="table">
+  <thead>
+    <tr>
+      {{!-- <th><abbr title="Position">Pos</abbr></th> --}}
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Players</th>
+      <th>Difficulty</th>
+      <th>Ages</th>
+      <th>Playtime</th>
+    </tr>
+  </thead>
+  <tbody>
+   {{#each games as |game| }}
+    <tr>
+      <td>{{game.title}}</td>
+      <td>{{game.genre}}</td>
+      <td>{{game.minplayers}}-{{game.maxplayers}}</td>
+      <td>{{game.difficulty}}</td>
+      <td>{{game.ages}}</td>
+      <td>{{game.playtime}}</td>
+    </tr>
+   {{/each}}
+  </tbody>
+</table>
+{{/if}}
+
+<div class="field">
+  <label class="label">Title</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Game title">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Genre</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Game genre">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Min. Players</label>
+  <div class="control">
+    <input class="input" type="text">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Max. Players</label>
+  <div class="control">
+    <input class="input" type="text">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Difficulty</label>
+  <div class="control">
+    <div class="select">
+      <select>
+        <option> </option>
+        <option>Easy</option>
+        <option>Moderate</option>
+        <option>Hard</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Difficulty</label>
+  <div class="control">
+    <div class="select">
+      <select>
+        <option> </option>
+        <option>All ages</option>
+        <option>6+</option>
+        <option>10+</option>
+        <option>13+</option>
+        <option>18+</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Playtime</label>
+  <div class="control">
+    <div class="select">
+      <select>
+        <option> </option>
+        <option>0-30 min</option>
+        <option>30-60 min</option>
+        <option>1-2 hrs</option>
+        <option>2-3 hrs</option>
+        <option>3+ hrs</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="field {{!-- is-grouped --}}">
+  <div class="control">
+    <button id="submit-game" class="button is-link">Submit</button>
+  </div>
+  {{!-- <div class="control">
+    <button class="button is-link is-light">Cancel</button>
+  </div> --}}
+</div>
+
+
 {{!-- This is for adding a new game --}}
 {{!-- <div class="field">
   <label class="label">Name</label>
