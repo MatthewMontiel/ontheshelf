@@ -21,7 +21,6 @@ router.put("/:id", (req, res) => {
   Game.update(
     {
       title: req.body.title,
-      genre: req.body.genre,
       minplayers: req.body.minplayers,
       maxplayers: req.body.maxplayers,
       difficulty: req.body.difficulty,

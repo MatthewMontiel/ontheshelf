@@ -15,10 +15,6 @@ Game.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    genre: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     minplayers: {
       type: DataTypes.INTEGER,
       allowNull: true,

@@ -1,3 +1,18 @@
 [
-
+{
+    "title":"Cards against Humanity",
+    "minplayers":"4",
+    "maxplayers":"20",
+    "difficulty":"Easy",
+    "ages":"18+",
+    "playtime":"about 90 minutes"
+},
+{
+    "title":"Cobra Paw",
+    "minplayers":"2",
+    "maxplayers":"6",
+    "difficulty":"Easy",
+    "ages":"6+",
+    "playtime":"about 30 minutes"
+}
 ]
