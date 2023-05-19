@@ -4,6 +4,7 @@ const { Game } = require("../../models");
 const authorize = require("../../utils/authorize");
 
 // posts a new game to database
+// THIS WORKS
 router.post("/", authorize, async (req, res) => {
   try {
     const newGame = await Game.create({
@@ -40,12 +41,13 @@ router.post("/", authorize, async (req, res) => {
 // });
 
 // delete game from database
+// PRETTY SURE THIS WORKS THOUGH WHAT IT RETURNS IS WEIRD
 router.delete("/:id", authorize, async (req, res) => {
   try {
     const gameData = await Game.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+      //   user_id: req.session.user_id,
       },
     });
     // if it can't delete message user
