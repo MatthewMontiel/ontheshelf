@@ -29,11 +29,11 @@ This application is to have all of your games saved into a personal database to 
 
 ## *Contributers*
 
-***M Vincent Richards*** https://github.com/vrich88 <br>
-***Matt Montiel*** https://github.com/MatthewMontiel <br>
-***Danny Cohen*** https://github.com/dctristero <br>
-***Jacqueline Martinez*** https://github.com/JackieAmartinez <br>
-***Lindsey Isaac*** https://github.com/LindseyIsaac <br>
+***M Vincent Richards*** https://github.com/vrich88<br>
+***Matt Montiel*** https://github.com/MatthewMontiel<br>
+***Danny Cohen*** https://github.com/dctristero<br>
+***Jacqueline Martinez*** https://github.com/JackieAmartinez<br>
+***Lindsey Isaac*** https://github.com/LindseyIsaac<br>
 
 ## *Collaborators*
 
