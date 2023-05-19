@@ -5,11 +5,12 @@
         <div class="column is-one-third">
           <h1 class="title">Login</h1>
           <div class="box">
-            <form>
+            <form id="login-form">
               <div class="field">
                 <label class="label">Username</label>
                 <div class="control">
                   <input
+                    id="submit-username"
                     class="input"
                     type="text"
                     placeholder="Enter your username"
@@ -20,6 +21,7 @@
                 <label class="label">Password</label>
                 <div class="control">
                   <input
+                    id="submit-password"
                     class="input"
                     type="password"
                     placeholder="Enter your password"
@@ -28,7 +30,7 @@
               </div>
               <div class="field is-grouped">
                 <div class="control">
-                  <button class="button is-primary">Login</button>
+                  <button type="submit" class="button is-primary">Login</button>
                 </div>
                 {{! cool new feature coming soon }}
                 {{! <div class="control">
@@ -41,16 +43,17 @@
       </div>
     </div>
   </div>
-  <section class="hero is-fullheight">
+  {{!-- <section class="hero is-fullheight"> --}}
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title">Signup</h1>
         <div class="box">
-          <form>
+          <form id="signup-form">
             <div class="field">
-              <label class="label">Name</label>
+              <label class="label">Username</label>
               <div class="control">
                 <input
+                  id="create-username"
                   class="input"
                   type="text"
                   placeholder="Enter your name"
@@ -61,6 +64,7 @@
               <label class="label">Email</label>
               <div class="control">
                 <input
+                  id="#create-email"
                   class="input"
                   type="email"
                   placeholder="Enter your email"
@@ -71,6 +75,7 @@
               <label class="label">Password</label>
               <div class="control">
                 <input
+                  id="create-password"
                   class="input"
                   type="password"
                   placeholder="Enter your password"
@@ -79,7 +84,7 @@
             </div>
             <div class="field is-grouped">
               <div class="control">
-                <button class="button is-primary">Signup</button>
+                <button type="submit" class="button is-primary">Signup</button>
               </div>
               <div class="control">
                 <button class="button is-text">Cancel</button>
@@ -89,5 +94,7 @@
         </div>
       </div>
     </div>
-  </section>
+  {{!-- </section> --}}
 </section>
+
+<script src="./js/login.js"></script>

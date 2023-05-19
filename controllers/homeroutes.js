@@ -1,6 +1,7 @@
 // required dependencies
 const router = require("express").Router();
 const authorize = require("../utils/authorize");
+const { User } = require("../models");
 
 // loads up the home page log in request
 router.get("/", (req, res) => {
@@ -77,5 +78,28 @@ router.get("/login", (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
+
+// router.get("/list", async (req, res) => {
+//    try {
+//      const userData = await User.findAll();
+ 
+//      const users = userData.map((user) => user.get({ plain: true }));
+ 
+//      return users;
+//    }
+//    catch (err) {
+//      res.status(500).json(err);
+//    }
+//  });
+
+ router.get('/list', async (req, res) => {
+   const userData = await User.findAll().catch((err) => { 
+     res.json(err);
+   });
+   const users = userData.map((user) => user.get({ plain: true }));
+
+   res.json(users);
+   });
+
 
 module.exports = router;

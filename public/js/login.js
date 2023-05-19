@@ -2,13 +2,13 @@
 const loginUser = async (event) => {
   event.preventDefault();
   // local variables
-  const email = document.querySelector("#submit-email").value.trim();
+  const username = document.querySelector("#submit-username").value.trim();
   const password = document.querySelector("#submit-password").value.trim();
   // got a light, check for matches
-  if (email && password) {
+  if (username && password) {
     const response = await fetch("/api/users/login", {
       method: "POST",
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
     // good match show shelf, bad match yell at user
@@ -24,14 +24,14 @@ const loginUser = async (event) => {
 const createUser = async (event) => {
   event.preventDefault();
   // local variables
-  const name = document.querySelector("#create-name").value.trim();
+  const username = document.querySelector("#create-username").value.trim();
   const email = document.querySelector("#create-email").value.trim();
   const password = document.querySelector("#create-password").value.trim();
 // make sure new user not a clone
-  if (name && email && password) {
+  if (username && email && password) {
     const response = await fetch("/api/users/", {
       method: "POST",
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ username, email, password }),
       headers: { "Content-Type": "application/json" },
     });
     // user approved allow shelf view, disapproved user gets yelled at
@@ -45,7 +45,7 @@ const createUser = async (event) => {
 
 // review view port to find and listen to execute functions
 document
-  .querySelector("#member-form").addEventListener("submit", loginUser);
+  .querySelector("#login-form").addEventListener("submit", loginUser);
 
 document
-  .querySelector("#register-form").addEventListener("submit", createUser);
+  .querySelector("#signup-form").addEventListener("submit", createUser);
