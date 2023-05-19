@@ -3,7 +3,6 @@ const submitGame = async (event) => {
   event.preventDefault();
   // local variables
   const title = document.querySelector("#title").value.trim();
-  const genre = document.querySelector("#genre").value.trim();
   const minplayers = document.querySelector("#minplayers").value.trim();
   const maxplayers = document.querySelector("#maxplayers").value.trim();
   const difficulty = document.querySelector("#difficulty").value.trim();
@@ -16,7 +15,6 @@ const submitGame = async (event) => {
       // do we need to tie in the user id here? if so how?
       body: JSON.stringify({
         title,
-        genre,
         minplayers,
         maxplayers,
         difficulty,

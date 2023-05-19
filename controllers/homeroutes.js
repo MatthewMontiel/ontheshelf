@@ -4,6 +4,7 @@ const authorize = require("../utils/authorize");
 const { User } = require("../models");
 
 // loads up the home page log in request
+// THIS WORKS
 router.get("/", (req, res) => {
   res.render("login");
 });
@@ -61,9 +62,6 @@ router.get("/login", (req, res) => {
 
 // future enhancement> gather all game data for master database cross ref?
 // router.get("/", async (req, res) => {
-//   try {
-//     const gameData = await Game.findAll({
-//       include: [
 //         {
 //           model: User,
 //           attributes: ["name"],
@@ -92,6 +90,8 @@ router.get("/login", (req, res) => {
 //    }
 //  });
 
+
+// THIS WORKS
  router.get('/list', async (req, res) => {
    const userData = await User.findAll().catch((err) => { 
      res.json(err);
