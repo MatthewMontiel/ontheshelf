@@ -35,8 +35,13 @@
 ***Rachel Solov* **
 
 ## *Built With*
-
+Handlebars 
+Bulma
 ## *Future Updates*
+
+Themed page views such as sci-fi, kids themes, family themes, ect.<br>
+Add functionality for users to catalog other collections (records, comics, movies, etc.)<br>
+Include more sorting parameters for each catalog.<br>
 
 ## *License*
 
