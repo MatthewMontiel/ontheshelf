@@ -17,7 +17,7 @@
 
 ## *Description*
 
-This application is to have all of your games saved into a chart. 
+This application is to have all of your games saved into a personal database to make choosing a game a breeze! 
 
 ## *How to use*
 
@@ -27,14 +27,20 @@ This application is to have all of your games saved into a chart.
 
 - [Deployed application]()
 
-## *Collaborators*
+## *Contributers*
 
 ***M Vincent Richards*** https://github.com/vrich88 <br>
 ***Matt Montiel*** https://github.com/MatthewMontiel <br>
 ***Danny Cohen*** https://github.com/dctristero <br>
 ***Jacqueline Martinez*** https://github.com/JackieAmartinez <br>
 ***Lindsey Isaac*** https://github.com/LindseyIsaac <br>
-***Rachel Solov*** Bulma consultant<br>
+
+## *Collaborators*
+
+***Rachel Solov-TA*** Bulma consultant, coding guidence, and ESP<br>
+***Derek Beckford-TA***coding guidence and ESP<br>
+***Matthew Calimbas*** Tutor<br>
+***Robbie Kurle*** Tutor<br>
 
 
 ## *Built With*
