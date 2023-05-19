@@ -34,7 +34,7 @@ Game.init(
       allowNull: true,
     },
     playtime: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     // future enhancement to allow users to put in specific commentary judging the game on the shelf
