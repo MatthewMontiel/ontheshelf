@@ -33,7 +33,7 @@ router.get("/game/:id", async (req, res) => {
   try {
     const gameData = await Game.findByPk(req.params.id, {
       include: [
-        //maybe not needed; should't display?
+        // maybe not needed; should't display?
         {
           model: User,
           attributes: ["name"],
