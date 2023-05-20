@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -6,63 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- incorporate bulma cdn here-->
     <title>On The Shelf</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
-<body>
+  <body>
     <header>
 
-    {{!-- start of nav --}}
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/views/layouts/main.handlebars">
-      <img id="home" src="../../public/Images/otsheader.png" width="112" height="28"/>
-    </a>
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <!-- Link for long format instructions -->
-      <a class="navbar-item" href="">How to Use</a>
-    </div>
-    <div>
-      <button id="logout" class="button">Logout</button>
-    </div>
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <strong id="tagline">Let's Play</strong>
-      </div>
-    </div>
-  </div>
-</nav>
-    {{! end of nav }}
+      {{! start of nav }}
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/views/layouts/main.handlebars">
+            <img
+              id="home"
+              src="../../public/Images/otsheader.png"
+              width="112"
+              height="28"
+            />
+          </a>
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <!-- Link for long format instructions -->
+            <a class="navbar-item" href="">How to Use</a>
+          </div>
+          <div>
+            <button id="logout" class="button">Logout</button>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <strong id="tagline">Let's Play</strong>
+            </div>
+          </div>
+        </div>
+      </nav>
+      {{! end of nav }}
     </header>
-{{!-- handlebars go here --}}
+    {{! handlebars go here }}
 
-<main>
-{{!-- where the partials are going to show up --}}
-{{{ body }}}
-</main>
+    <main>
+      {{! where the partials are going to show up }}
+      {{{body}}}
+    </main>
 
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <a href="mailto:dajalimavi@gmail.com">Contact</a>
+      </div>
+    </footer>
 
-<!-- Link to Development Team info -->
-
-<footer class="footer">
-  <div class="content has-text-centered">
-          <a href="mailto:dajalimavi@gmail.com">Contact</a>
-  </div>
-</footer>
-
-</body>
-
-
+  </body>
 
 </html>
 <script src="./js/logout.js"></script>
