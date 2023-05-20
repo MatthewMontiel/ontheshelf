@@ -5,9 +5,9 @@ const submitGame = async (event) => {
   const title = document.querySelector("#title").value.trim();
   const minplayers = document.querySelector("#minplayers").value.trim();
   const maxplayers = document.querySelector("#maxplayers").value.trim();
-  const difficulty = document.querySelector("#difficulty").value.trim();
-  const ages = document.querySelector("#ages").value.trim();
-  const playtime = document.querySelector("#playtime").value.trim();
+  const difficulty = document.querySelector("#difficulty").value;
+  const ages = document.querySelector("#ages").value;
+  const playtime = document.querySelector("#playtime").value;
   //
   if (title) {
     const response = await fetch("/api/games", {
@@ -51,4 +51,4 @@ const burnGame = async (event) => {
 
 // review viewport to locate and listen for functions
 document.querySelector("#submit-game").addEventListener("click", submitGame);
-document.querySelector("#").addEventListener("click", burnGame);
+// document.querySelector("#").addEventListener("click", burnGame);

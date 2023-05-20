@@ -13,13 +13,13 @@ router.get("/", (req, res) => {
 router.get("/shelf", authorize, async (req, res) => {
   try {
     // Find the logged in user based on the session ID and return shelf data
-    const userData = await User.findByPk(req.session.id, {
-      attributes: { exclude: ["password"] },
-      include: [{ model: Game }],
-    });
-    const user = userData.get({ plain: true });
+   //  const userData = await User.findByPk(req.session.id, {
+   //    attributes: { exclude: ["password"] },
+   //    include: [{ model: Game }],
+   //  });
+   //  const user = userData.get({ plain: true });
     res.render("shelf", {
-      ...user,
+      // ...user,
       logged_in: true,
     });
     // tells what error occurred
