@@ -4,12 +4,12 @@ const { Game } = require("../../models");
 const authorize = require("../../utils/authorize");
 
 // posts a new game to database
-// THIS WORKS
+// THIS WORKS EXCEPT FOR USER ID
 router.post("/", authorize, async (req, res) => {
   try {
     const newGame = await Game.create({
       ...req.body,
-      user_id: req.session.user_id,
+      userID: req.session.user_id,
     });
     res.status(200).json(newGame);
     // catch and tell error
