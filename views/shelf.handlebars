@@ -1,105 +1,111 @@
-{{!-- this view displays when logged in --}}
+{{! table displaying games already on the shelf }}
+<section>
+  {{#if games.length}}
+    <table class="table">
+      <thead>
+        <tr>
+          {{! <th><abbr title="Position">Pos</abbr></th> }}
+          <th>Title</th>
+          <th>Players</th>
+          <th>Difficulty</th>
+          <th>Ages</th>
+          <th>Playtime</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each games as |game|}}
+          <tr>
+            <td>{{game.title}}</td>
+            <td>{{game.minplayers}}-{{game.maxplayers}}</td>
+            <td>{{game.difficulty}}</td>
+            <td>{{game.ages}}</td>
+            <td>{{game.playtime}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+</section>
 
-{{#if games}}
-<table class="table">
-  <thead>
-    <tr>
-      {{!-- <th><abbr title="Position">Pos</abbr></th> --}}
-      <th>Title</th>
-      <th>Players</th>
-      <th>Difficulty</th>
-      <th>Ages</th>
-      <th>Playtime</th>
-    </tr>
-  </thead>
-  <tbody>
-   {{#each games as |game| }}
-    <tr>
-      <td>{{game.title}}</td>
-      <td>{{game.minplayers}}-{{game.maxplayers}}</td>
-      <td>{{game.difficulty}}</td>
-      <td>{{game.ages}}</td>
-      <td>{{game.playtime}}</td>
-    </tr>
-   {{/each}}
-  </tbody>
-</table>
-{{/if}}
-
-<div class="field">
-  <label class="label">Title</label>
-  <div class="control">
-    <input id="title" class="input" type="text" placeholder="Game title">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Min. Players</label>
-  <div class="control">
-    <input id="minplayers" class="input" type="text">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Max. Players</label>
-  <div class="control">
-    <input id="maxplayers" class="input" type="text">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Difficulty</label>
-  <div class="control">
-    <div id="difficulty" class="select">
-      <select>
-        <option> </option>
-        <option>Easy</option>
-        <option>Moderate</option>
-        <option>Hard</option>
-      </select>
+{{! new game input }}
+<section>
+  <form>
+    {{! title input }}
+    <div class="field">
+      <label class="label">Title</label>
+      <div class="control">
+        <input id="title" class="input" type="text" placeholder="Game title" />
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Ages</label>
-  <div class="control">
-    <div id="ages" class="select">
-      <select>
-        <option> </option>
-        <option>All ages</option>
-        <option>6+</option>
-        <option>10+</option>
-        <option>13+</option>
-        <option>18+</option>
-      </select>
+    {{! minimum players input }}
+    <div class="field">
+      <label class="label">Min. Players</label>
+      <div class="control">
+        <input id="minplayers" class="input" type="text" />
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Playtime</label>
-  <div class="control">
-    <div id="playtime" class="select">
-      <select>
-        <option> </option>
-        <option>about 30 minutes</option>
-        <option>about 60 minutes</option>
-        <option>about 90 minutes</option>
-        <option>over 90 minutes</option>
-      </select>
+    {{! maximum players input }}
+    <div class="field">
+      <label class="label">Max. Players</label>
+      <div class="control">
+        <input id="maxplayers" class="input" type="text" />
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="field {{!-- is-grouped --}}">
-  <div class="control">
-    <button id="submit-game" class="button is-link">Submit</button>
-  </div>
-  {{!-- <div class="control">
-    <button class="button is-link is-light">Cancel</button>
-  </div> --}}
-</div>
-
-{{!-- MAKE SURE THIS PATHING WORKS --}}
+    {{! difficulty input }}
+    <div class="field">
+      <label class="label">Difficulty</label>
+      <div class="control">
+        <div id="difficulty" class="select">
+          <select>
+            <option> </option>
+            <option>Easy</option>
+            <option>Moderate</option>
+            <option>Hard</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    {{! ages input }}
+    <div class="field">
+      <label class="label">Ages</label>
+      <div class="control">
+        <div id="ages" class="select">
+          <select>
+            <option> </option>
+            <option>All ages</option>
+            <option>6+</option>
+            <option>10+</option>
+            <option>13+</option>
+            <option>18+</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    {{! playtime input }}
+    <div class="field">
+      <label class="label">Playtime</label>
+      <div class="control">
+        <div id="playtime" class="select">
+          <select>
+            <option> </option>
+            <option>about 30 minutes</option>
+            <option>about 60 minutes</option>
+            <option>about 90 minutes</option>
+            <option>over 90 minutes</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    {{! submit new game form }}
+    <div class="field is-grouped">
+      <div class="control">
+        <button id="submit-game" class="button is-link">Submit</button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light">Cancel</button>
+      </div>
+    </div>
+  </form>
+</section>
+{{! MAKE SURE THIS PATHING WORKS }}
 <script src="./js/shelf.js"></script>

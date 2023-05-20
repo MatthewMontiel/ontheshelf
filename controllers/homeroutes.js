@@ -32,7 +32,8 @@ router.get("/shelf", authorize, async (req, res) => {
 router.get("/game/:id", async (req, res) => {
   try {
     const gameData = await Game.findByPk(req.params.id, {
-      include: [ //maybe not needed; should't display?
+      include: [
+        //maybe not needed; should't display?
         {
           model: User,
           attributes: ["name"],
@@ -80,9 +81,9 @@ router.get("/login", (req, res) => {
 // router.get("/list", async (req, res) => {
 //    try {
 //      const userData = await User.findAll();
- 
+
 //      const users = userData.map((user) => user.get({ plain: true }));
- 
+
 //      return users;
 //    }
 //    catch (err) {
@@ -90,16 +91,14 @@ router.get("/login", (req, res) => {
 //    }
 //  });
 
-
 // THIS WORKS
- router.get('/list', async (req, res) => {
-   const userData = await User.findAll().catch((err) => { 
-     res.json(err);
-   });
-   const users = userData.map((user) => user.get({ plain: true }));
+router.get("/list", async (req, res) => {
+  const userData = await User.findAll().catch((err) => {
+    res.json(err);
+  });
+  const users = userData.map((user) => user.get({ plain: true }));
 
-   res.json(users);
-   });
-
+  res.json(users);
+});
 
 module.exports = router;
