@@ -2,41 +2,44 @@
 <h2>What are you going to play {{username}}?</h2>
 {{! table displaying games on the shelf }}
 <section>
-  {{!-- {{#if games.length}} --}}
-    <table class="table">
-      <thead>
+  <table class="table">
+    <thead>
+      <tr>
+        {{! <th><abbr title="Position">Pos</abbr></th> }}
+        <th>Title</th>
+        <th>Players</th>
+        <th>Difficulty</th>
+        <th>Ages</th>
+        <th>Playtime</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody class="shelf-of-games">
+      {{#each games as |game|}}
         <tr>
-          {{! <th><abbr title="Position">Pos</abbr></th> }}
-          <th>Title</th>
-          <th>Players</th>
-          <th>Difficulty</th>
-          <th>Ages</th>
-          <th>Playtime</th>
+          <td>{{game.title}}</td>
+          <td>{{game.minplayers}} - {{game.maxplayers}}</td>
+          <td>{{game.difficulty}}</td>
+          <td>{{game.ages}}</td>
+          <td>{{game.playtime}}</td>
+          <td>
+            <a class="button delbtn" gameid="{{game.id}}">
+              <img src="/Images/recycle-bin.png" width="15rem" height="15rem" />
+            </a>
+          </td>
         </tr>
-      </thead>
-      <tbody>
-        {{#each games as |game|}}
-          {{!-- <tr>{{#with game}} --}}
-              <td>{{game.title}}</td>
-              <td>{{game.minplayers}} - {{game.maxplayers}}</td>
-              <td>{{game.difficulty}}</td>
-              <td>{{game.ages}}</td>
-              <td>{{game.playtime}}</td>
-            {{!-- {{/with}} --}}
-            {{!-- <td>{{game.playtime}}</td> --}}
-          </tr>
-            {{else}}
-    <p>Your shelf is empty, go buy some games!</p>
-        {{/each}}
-      </tbody>
-    </table>
-  {{!-- {{else}}
-    <p>Your shelf is empty, go buy some games!</p> --}}
-  {{!-- {{/if}} --}}
+      {{else}}
+        <tr>
+          <td>Your shelf is empty, go buy some games!</td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
 </section>
 
 {{! new game input }}
-<section>
+<section id="new-game-form">
   <form>
     {{! title input }}
     <div class="field">
