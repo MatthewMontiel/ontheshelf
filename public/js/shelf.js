@@ -1,3 +1,5 @@
+// display user name when logged in
+
 // function to add game to the shelf
 const submitGame = async (event) => {
   event.preventDefault();
@@ -38,9 +40,9 @@ const submitGame = async (event) => {
 
 // throw away game from the shelf
 const burnGame = async (event) => {
-  if (event.target.hasAttribute("")) {
-    const id = event.target.getAttribute("");
-    const response = await fetch(`/api/game/${id}`, {
+  if (event.target.hasAttribute("gameid")) {
+    const id = event.target.getAttribute("gameid");
+    const response = await fetch(`/api/games/${id}`, {
       method: "DELETE",
     });
     // if good response then burn the game
@@ -54,4 +56,4 @@ const burnGame = async (event) => {
 
 // review viewport to locate and listen for functions
 document.querySelector("#submit-game").addEventListener("click", submitGame);
-// document.querySelector("#").addEventListener("click", burnGame);
+document.querySelector(".shelf-of-games").addEventListener("click", burnGame);
