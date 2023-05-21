@@ -14,5 +14,21 @@
     "difficulty":"Easy",
     "ages":"6+",
     "playtime":"about 30 minutes"
+},
+{
+   "title":"angles and dangle",
+   "minplayers":"3",
+   "maxplayers":"500000",
+   "difficulty":"Easy",
+   "ages":"18+",
+   "playtime":"about 60 minutes"
+},
+{
+   "title":"buildings are scary",
+   "minplayers":"1",
+   "maxplayers":"2",
+   "difficulty":"Easy",
+   "ages":"10+",
+   "playtime":"about 90 minutes"
 }
 ]

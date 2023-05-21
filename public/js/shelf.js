@@ -5,9 +5,12 @@ const submitGame = async (event) => {
   const title = document.querySelector("#title").value.trim();
   const minplayers = document.querySelector("#minplayers").value.trim();
   const maxplayers = document.querySelector("#maxplayers").value.trim();
-  const difficulty = document.querySelector("#difficulty").value;
-  const ages = document.querySelector("#ages").value;
-  const playtime = document.querySelector("#playtime").value;
+  const difficultySelect = document.querySelector("#difficulty");
+  const difficulty = difficultySelect[difficultySelect.selectedIndex].value;
+  const agesSelect = document.querySelector("#ages");
+  const ages = agesSelect[agesSelect.selectedIndex].value;
+  const playtimeSelect = document.querySelector("#playtime");
+  const playtime = playtimeSelect[playtimeSelect.selectedIndex].value;
   //
   if (title) {
     const response = await fetch("/api/games", {

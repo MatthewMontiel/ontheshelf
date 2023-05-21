@@ -18,7 +18,7 @@
         {{#each games as |game|}}
           {{!-- <tr>{{#with game}} --}}
               <td>{{game.title}}</td>
-              <td>{{game.minplayers}}-{{game.maxplayers}}</td>
+              <td>{{game.minplayers}} - {{game.maxplayers}}</td>
               <td>{{game.difficulty}}</td>
               <td>{{game.ages}}</td>
               <td>{{game.playtime}}</td>
@@ -63,12 +63,12 @@
     <div class="field">
       <label class="label">Difficulty</label>
       <div class="control">
-        <div id="difficulty" class="select">
-          <select>
-            <option> </option>
-            <option>Easy</option>
-            <option>Moderate</option>
-            <option>Hard</option>
+        <div>
+          <select id="difficulty" class="select">
+            <option value=""> </option>
+            <option value="Easy">Easy</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Hard">Hard</option>
           </select>
         </div>
       </div>
@@ -77,14 +77,14 @@
     <div class="field">
       <label class="label">Ages</label>
       <div class="control">
-        <div id="ages" class="select">
-          <select>
-            <option> </option>
-            <option>All ages</option>
-            <option>6+</option>
-            <option>10+</option>
-            <option>13+</option>
-            <option>18+</option>
+        <div>
+          <select id="ages" class="select">
+            <option value=""> </option>
+            <option value="All ages">All ages</option>
+            <option value="6+">6+</option>
+            <option value="10+">10+</option>
+            <option value="13+">13+</option>
+            <option value="18+">18+</option>
           </select>
         </div>
       </div>
@@ -93,13 +93,13 @@
     <div class="field">
       <label class="label">Playtime</label>
       <div class="control">
-        <div id="playtime" class="select">
-          <select>
-            <option> </option>
-            <option>about 30 minutes</option>
-            <option>about 60 minutes</option>
-            <option>about 90 minutes</option>
-            <option>over 90 minutes</option>
+        <div>
+          <select id="playtime" class="select">
+            <option value=""> </option>
+            <option value="about 30 minutes">about 30 minutes</option>
+            <option value="about 60 minutes">about 60 minutes</option>
+            <option value="about 90 minutes">about 90 minutes</option>
+            <option value="over 90 minutes">over 90 minutes</option>
           </select>
         </div>
       </div>
