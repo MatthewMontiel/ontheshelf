@@ -1,7 +1,8 @@
 {{! table displaying games already on the shelf }}
-<h2>EAT SHIT, CODING</h2>
+<h2>What are you going to play {{username}}?</h2>
+{{! table displaying games on the shelf }}
 <section>
-  {{#if games.length}}
+  {{!-- {{#if games.length}} --}}
     <table class="table">
       <thead>
         <tr>
@@ -15,17 +16,23 @@
       </thead>
       <tbody>
         {{#each games as |game|}}
-          <tr>
-            <td>{{game.title}}</td>
-            <td>{{game.minplayers}}-{{game.maxplayers}}</td>
-            <td>{{game.difficulty}}</td>
-            <td>{{game.ages}}</td>
-            <td>{{game.playtime}}</td>
+          {{!-- <tr>{{#with game}} --}}
+              <td>{{game.title}}</td>
+              <td>{{game.minplayers}}-{{game.maxplayers}}</td>
+              <td>{{game.difficulty}}</td>
+              <td>{{game.ages}}</td>
+              <td>{{game.playtime}}</td>
+            {{!-- {{/with}} --}}
+            {{!-- <td>{{game.playtime}}</td> --}}
           </tr>
+            {{else}}
+    <p>Your shelf is empty, go buy some games!</p>
         {{/each}}
       </tbody>
     </table>
-  {{/if}}
+  {{!-- {{else}}
+    <p>Your shelf is empty, go buy some games!</p> --}}
+  {{!-- {{/if}} --}}
 </section>
 
 {{! new game input }}
