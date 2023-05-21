@@ -2,6 +2,7 @@
 const router = require("express").Router();
 const authorize = require("../utils/authorize");
 const { User } = require("../models");
+const { Game } = require("../models");
 
 // loads up the home page log in request
 // THIS WORKS
@@ -12,14 +13,14 @@ router.get("/", (req, res) => {
 // pulls the user's games to display on the shelf once logged in
 router.get("/shelf", authorize, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID and return shelf data
-   //  const userData = await User.findByPk(req.session.id, {
-   //    attributes: { exclude: ["password"] },
-   //    include: [{ model: Game }],
-   //  });
-   //  const user = userData.get({ plain: true });
+    // Find the logged in user based on the session ID and return their shelf data
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Game }],
+    });
+    const user = userData.get({ plain: true });
     res.render("shelf", {
-      // ...user,
+      ...user,
       logged_in: true,
     });
     // tells what error occurred
@@ -36,7 +37,7 @@ router.get("/game/:id", async (req, res) => {
         // maybe not needed; should't display?
         {
           model: User,
-          attributes: ["name"],
+          attributes: ["username"],
         },
       ],
     });
@@ -99,6 +100,15 @@ router.get("/list", async (req, res) => {
   const users = userData.map((user) => user.get({ plain: true }));
 
   res.json(users);
+});
+
+router.get("/box", async (req, res) => {
+  const gameData = await Game.findAll().catch((err) => {
+    res.json(err);
+  });
+  const games = gameData.map((game) => game.get({ plain: true }));
+
+  res.json(games);
 });
 
 module.exports = router;

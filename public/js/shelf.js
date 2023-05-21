@@ -44,10 +44,10 @@ const burnGame = async (event) => {
     if (response.ok) {
       document.location.replace("/shelf");
     } else {
-      alert("This game dodged your attack")
+      alert("This game dodged your attack");
     }
   }
-}
+};
 
 // review viewport to locate and listen for functions
 document.querySelector("#submit-game").addEventListener("click", submitGame);
