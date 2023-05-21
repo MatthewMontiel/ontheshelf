@@ -42,6 +42,6 @@ app.use(routes);
 
 // use force true when running for very first time and only then
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
