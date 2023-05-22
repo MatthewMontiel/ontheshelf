@@ -1,10 +1,11 @@
-<section class="hero is-fullheight">
+<section class="hero">
   <div class="hero-body">
     <div class="container has-text-centered">
       <div class="columns is-centered">
         <div class="column is-one-third">
           <h1 class="title">Login</h1>
           <div class="box">
+            {{! form for members to log in }}
             <form id="login-form">
               <div class="field">
                 <label class="label">Username</label>
@@ -44,57 +45,61 @@
     </div>
   </div>
 </section>
-  <!--space between sections-->
+
 <section class="hero">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <div class="columns is-centered">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="columns is-centered">
         <div class="column is-one-third">
-        <h1 class="title">Signup</h1>
-        <div class="box">
-          <form id="signup-form">
-            <div class="field">
-              <label class="label">Username</label>
-              <div class="control">
-                <input
-                  id="create-username"
-                  class="input"
-                  type="text"
-                  placeholder="Enter your name"
-                />
+          <h1 class="title">Signup</h1>
+          <div class="box">
+            {{! form for new users to join }}
+            <form id="signup-form">
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control">
+                  <input
+                    id="create-username"
+                    class="input"
+                    type="text"
+                    placeholder="Choose your username"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <label class="label">Email</label>
-              <div class="control">
-                <input
-                  id="create-email"
-                  class="input"
-                  type="email"
-                  placeholder="Enter your email"
-                />
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  <input
+                    id="create-email"
+                    class="input"
+                    type="email"
+                    placeholder="Enter your email"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <label class="label">Password</label>
-              <div class="control">
-                <input
-                  id="create-password"
-                  class="input"
-                  type="password"
-                  placeholder="Enter your password"
-                />
+              <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                  <input
+                    id="create-password"
+                    class="input"
+                    type="password"
+                    placeholder="Create an 8-23 character password"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="field is-grouped">
-              <div class="control">
-                <button type="submit" class="button is-primary">Signup</button>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button
+                    type="submit"
+                    class="button is-primary"
+                  >Signup</button>
+                </div>
+                <div class="control">
+                  <button class="button is-text">Cancel</button>
+                </div>
               </div>
-              <div class="control">
-                <button class="button is-text">Cancel</button>
-              </div>
-            </div>
-          </form>
+            </form>
           </div>
         </div>
       </div>

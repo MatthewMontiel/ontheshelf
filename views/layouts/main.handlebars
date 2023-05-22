@@ -1,10 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- incorporate bulma cdn here-->
     <title>On The Shelf</title>
     <link
       rel="stylesheet"
@@ -18,13 +16,14 @@
     />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
+  {{! body of viewport }}
   <body>
     <header>
-
       {{! start of nav }}
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="/views/layouts/main.handlebars">
+            {{! "home" button link that returns to main log in page }}
             <img
               id="home"
               src="/Images/otsheader.png"
@@ -32,42 +31,23 @@
               height="28"
             />
           </a>
-          <a
-            role="button"
-            class="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <!-- Link for long format instructions -->
-            <a class="navbar-item" href="">How to Use</a>
-          </div>
-          <div>
-            <button id="logout" class="button">Logout</button>
-          </div>
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <strong id="tagline">Let's Play</strong>
-            </div>
+        <div>
+          <button id="logout" class="button">Logout</button>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <strong id="tagline">Let's Play</strong>
           </div>
         </div>
       </nav>
       {{! end of nav }}
     </header>
-    {{! handlebars go here }}
-
+    {{! where the "partials" are going to show up for the modularity of the site }}
     <main>
-      {{! where the partials are going to show up }}
       {{{body}}}
     </main>
-
+    {{! footer where contact is found and potential future site mapping options }}
     <footer class="footer">
       <div class="content has-text-centered">
         <a href="mailto:dajalimavi@gmail.com">Contact</a>
@@ -77,4 +57,5 @@
   </body>
 
 </html>
+
 <script src="./js/logout.js"></script>

@@ -1,9 +1,7 @@
-// display user name when logged in
-
 // function to add game to the shelf
 const submitGame = async (event) => {
   event.preventDefault();
-  // local variables
+  // local variables to find location in view port and associated data to either retrieve or render
   const title = document.querySelector("#title").value.trim();
   const minplayers = document.querySelector("#minplayers").value.trim();
   const maxplayers = document.querySelector("#maxplayers").value.trim();
@@ -13,11 +11,10 @@ const submitGame = async (event) => {
   const ages = agesSelect[agesSelect.selectedIndex].value;
   const playtimeSelect = document.querySelector("#playtime");
   const playtime = playtimeSelect[playtimeSelect.selectedIndex].value;
-  //
+  // checks for if data is in good order to add to shelf
   if (title) {
     const response = await fetch("/api/games", {
       method: "POST",
-      // do we need to tie in the user id here? if so how?
       body: JSON.stringify({
         title,
         minplayers,
@@ -30,9 +27,9 @@ const submitGame = async (event) => {
     });
     // if game was good, place on shelf and place new game on shelf aka rewrite the shelf
     if (response.ok) {
-      // check on this
       document.location.replace("/shelf");
     } else {
+      // if game is not good rejected from the shelf
       alert("This game fell on the floor");
     }
   }

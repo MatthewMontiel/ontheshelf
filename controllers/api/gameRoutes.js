@@ -4,7 +4,6 @@ const { Game } = require("../../models");
 const authorize = require("../../utils/authorize");
 
 // posts a new game to database
-// THIS WORKS EXCEPT FOR USER ID
 router.post("/", authorize, async (req, res) => {
   try {
     const newGame = await Game.create({
@@ -18,7 +17,30 @@ router.post("/", authorize, async (req, res) => {
   }
 });
 
-// update game in database -- can we attach this to an "edit" btn maybe future enhancement
+// delete game from database
+router.delete("/:id", authorize, async (req, res) => {
+  try {
+    const gameData = await Game.destroy({
+      where: {
+        id: req.params.id,
+        //   user_id: req.session.user_id,
+      },
+    });
+    // if it can't delete message user
+    if (!gameData) {
+      res.status(404).json({
+        message: `Why would you try to destroy something that doesn't exist; that doesn't even make any sense, what are you doing`,
+      });
+      return;
+    }
+    res.status(200).json(gameData);
+    // catch and tell error
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// update game in database -- attach this to an "edit" btn for future enhancement
 // router.put("/:id", (req, res) => {
 //   Game.update(
 //     {
@@ -39,29 +61,5 @@ router.post("/", authorize, async (req, res) => {
 //     res.json(updatedGame);
 //   });
 // });
-
-// delete game from database
-// PRETTY SURE THIS WORKS THOUGH WHAT IT RETURNS IS WEIRD
-router.delete("/:id", authorize, async (req, res) => {
-  try {
-    const gameData = await Game.destroy({
-      where: {
-        id: req.params.id,
-      //   user_id: req.session.user_id,
-      },
-    });
-    // if it can't delete message user
-    if (!gameData) {
-      res.status(404).json({
-        message: `Why would you try to destroy something that doesn't exist; that doesn't even make any sense, what are you doing`,
-      });
-      return;
-    }
-    res.status(200).json(gameData);
-    // catch and tell error
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;
