@@ -3,7 +3,6 @@ const router = require("express").Router();
 const { User } = require("../../models");
 
 // make a new user and save session data
-// THIS WORKS
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -19,10 +18,11 @@ router.post("/", async (req, res) => {
 });
 
 // log into on the shelf
-// THIS WORKS (AT LEAST INSOMNIA RETURNS YESYESYES)
 router.post("/login", async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username: req.body.username } });
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+    });
     // check for existing email
     if (!userData) {
       res
@@ -51,13 +51,14 @@ router.post("/login", async (req, res) => {
 });
 
 // log out of on the shelf
-// THIS RETURNS 204 and 404 AS IT SHOULD, CAN'T MAKE IT RETURN THE MESSAGE
 router.post("/logout", (req, res) => {
   // on log out and destroy session data
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(204).json({ message: "NEVER SHOW YOUR FACE HERE AGAIN" }).end()
-      ;
+      res
+        .status(204)
+        .json({ message: "NEVER SHOW YOUR FACE HERE AGAIN" })
+        .end();
     });
     // return an error if something happens
   } else {

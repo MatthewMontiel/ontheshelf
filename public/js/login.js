@@ -27,7 +27,7 @@ const createUser = async (event) => {
   const username = document.querySelector("#create-username").value.trim();
   const email = document.querySelector("#create-email").value.trim();
   const password = document.querySelector("#create-password").value.trim();
-// make sure new user not a clone
+  // make sure new user not a clone
   if (username && email && password) {
     const response = await fetch("/api/users/", {
       method: "POST",
@@ -43,9 +43,7 @@ const createUser = async (event) => {
   }
 };
 
-// review view port to find and listen to execute functions
-document
-  .querySelector("#login-form").addEventListener("submit", loginUser);
+// review view port to find appropriate locations to listen in order to execute functions
+document.querySelector("#login-form").addEventListener("submit", loginUser);
 
-document
-  .querySelector("#signup-form").addEventListener("submit", createUser);
+document.querySelector("#signup-form").addEventListener("submit", createUser);

@@ -42,6 +42,7 @@ Game.init(
     //   type: DataTypes.STRING,
     //   allowNull: false,
     // },
+    // import user id from User model
     userID: {
       type: DataTypes.INTEGER,
       references: {

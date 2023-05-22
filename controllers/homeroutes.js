@@ -5,7 +5,6 @@ const { User } = require("../models");
 const { Game } = require("../models");
 
 // loads up the home page log in request
-// THIS WORKS
 router.get("/", (req, res) => {
   res.render("login");
 });
@@ -34,7 +33,6 @@ router.get("/game/:id", async (req, res) => {
   try {
     const gameData = await Game.findByPk(req.params.id, {
       include: [
-        // maybe not needed; should't display?
         {
           model: User,
           attributes: ["username"],
@@ -62,37 +60,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-// future enhancement> gather all game data for master database cross ref?
-// router.get("/", async (req, res) => {
-//         {
-//           model: User,
-//           attributes: ["name"],
-//         },
-//       ],
-//     });
-
-//     const games = gameData.map((game) => game.get({ plain: true }));
-
-//     res.render("homepage");
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// router.get("/list", async (req, res) => {
-//    try {
-//      const userData = await User.findAll();
-
-//      const users = userData.map((user) => user.get({ plain: true }));
-
-//      return users;
-//    }
-//    catch (err) {
-//      res.status(500).json(err);
-//    }
-//  });
-
-// THIS WORKS
+// route for reviewing all users - not accessible through user interface
 router.get("/list", async (req, res) => {
   const userData = await User.findAll().catch((err) => {
     res.json(err);
@@ -102,6 +70,7 @@ router.get("/list", async (req, res) => {
   res.json(users);
 });
 
+// route for reviewing all games - not accessible through user interface
 router.get("/box", async (req, res) => {
   const gameData = await Game.findAll().catch((err) => {
     res.json(err);

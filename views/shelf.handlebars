@@ -1,121 +1,145 @@
 {{! table displaying games already on the shelf }}
-<h2>What are you going to play {{username}}?</h2>
+<h1 class="title">What are you going to play {{username}}?</h1>
 {{! table displaying games on the shelf }}
-<section>
-  <table class="table">
-    <thead>
-      <tr>
-        {{! <th><abbr title="Position">Pos</abbr></th> }}
-        <th>Title</th>
-        <th>Players</th>
-        <th>Difficulty</th>
-        <th>Ages</th>
-        <th>Playtime</th>
-        <th> </th>
-      </tr>
-    </thead>
-    <tbody class="shelf-of-games">
-      {{#each games as |game|}}
-        <tr>
-          <td>{{game.title}}</td>
-          <td>{{game.minplayers}} - {{game.maxplayers}}</td>
-          <td>{{game.difficulty}}</td>
-          <td>{{game.ages}}</td>
-          <td>{{game.playtime}}</td>
-          <td>
-            <a class="button delbtn" gameid="{{game.id}}">
-              <img src="/Images/recycle-bin.png" width="15rem" height="15rem" />
-            </a>
-          </td>
-        </tr>
-      {{else}}
-        <tr>
-          <td>Your shelf is empty, go buy some games!</td>
-        </tr>
-      {{/each}}
-
-    </tbody>
-  </table>
+<section class="hero">
+  <div class="hero-body">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="box">
+          <div class="table-container">
+            <table class="table is-fullwidth is-striped is-narrow is-hoverable">
+              <thead>
+                <tr>
+                  {{! <th><abbr title="Position">Pos</abbr></th> }}
+                  <th>Title</th>
+                  <th>Players</th>
+                  <th>Difficulty</th>
+                  <th>Ages</th>
+                  <th>Playtime</th>
+                  <th> </th>
+                </tr>
+              </thead>
+              <tbody class="shelf-of-games">
+                {{#each games as |game|}}
+                  <tr>
+                    <td>{{game.title}}</td>
+                    <td>{{game.minplayers}} - {{game.maxplayers}}</td>
+                    <td>{{game.difficulty}}</td>
+                    <td>{{game.ages}}</td>
+                    <td>{{game.playtime}}</td>
+                    <td>
+                      <a class="button delbtn" gameid="{{game.id}}">
+                        <img
+                          src="/Images/recycle-bin.png"
+                          width="15rem"
+                          height="15rem"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                {{else}}
+                  <tr>
+                    <td>Your shelf is empty, go buy some games!</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 {{! new game input }}
 <section id="new-game-form">
-  <form>
-    {{! title input }}
-    <div class="field">
-      <label class="label">Title</label>
-      <div class="control">
-        <input id="title" class="input" type="text" placeholder="Game title" />
+  <div class="columns is-centered">
+    <div class="column is-one-third">
+      <div class="box">
+        <form>
+          {{! title input }}
+          <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+              <input
+                id="title"
+                class="input"
+                type="text"
+                placeholder="Game title"
+              />
+            </div>
+          </div>
+          {{! minimum players input }}
+          <div class="field">
+            <label class="label">Min. Players</label>
+            <div class="control">
+              <input id="minplayers" class="input" type="text" />
+            </div>
+          </div>
+          {{! maximum players input }}
+          <div class="field">
+            <label class="label">Max. Players</label>
+            <div class="control">
+              <input id="maxplayers" class="input" type="text" />
+            </div>
+          </div>
+          {{! difficulty input }}
+          <div class="field">
+            <label class="label">Difficulty</label>
+            <div class="control">
+              <div>
+                <select id="difficulty" class="select">
+                  <option value=""> </option>
+                  <option value="Easy">Easy</option>
+                  <option value="Moderate">Moderate</option>
+                  <option value="Hard">Hard</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          {{! ages input }}
+          <div class="field">
+            <label class="label">Ages</label>
+            <div class="control">
+              <div>
+                <select id="ages" class="select">
+                  <option value=""> </option>
+                  <option value="All ages">All ages</option>
+                  <option value="6+">6+</option>
+                  <option value="10+">10+</option>
+                  <option value="13+">13+</option>
+                  <option value="18+">18+</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          {{! playtime input }}
+          <div class="field">
+            <label class="label">Playtime</label>
+            <div class="control">
+              <div>
+                <select id="playtime" class="select">
+                  <option value=""> </option>
+                  <option value="about 30 minutes">about 30 minutes</option>
+                  <option value="about 60 minutes">about 60 minutes</option>
+                  <option value="about 90 minutes">about 90 minutes</option>
+                  <option value="over 90 minutes">over 90 minutes</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          {{! submit new game form }}
+          <div class="field is-grouped">
+            <div class="control">
+              <button id="submit-game" class="button is-link">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-light">Cancel</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-    {{! minimum players input }}
-    <div class="field">
-      <label class="label">Min. Players</label>
-      <div class="control">
-        <input id="minplayers" class="input" type="text" />
-      </div>
-    </div>
-    {{! maximum players input }}
-    <div class="field">
-      <label class="label">Max. Players</label>
-      <div class="control">
-        <input id="maxplayers" class="input" type="text" />
-      </div>
-    </div>
-    {{! difficulty input }}
-    <div class="field">
-      <label class="label">Difficulty</label>
-      <div class="control">
-        <div>
-          <select id="difficulty" class="select">
-            <option value=""> </option>
-            <option value="Easy">Easy</option>
-            <option value="Moderate">Moderate</option>
-            <option value="Hard">Hard</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    {{! ages input }}
-    <div class="field">
-      <label class="label">Ages</label>
-      <div class="control">
-        <div>
-          <select id="ages" class="select">
-            <option value=""> </option>
-            <option value="All ages">All ages</option>
-            <option value="6+">6+</option>
-            <option value="10+">10+</option>
-            <option value="13+">13+</option>
-            <option value="18+">18+</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    {{! playtime input }}
-    <div class="field">
-      <label class="label">Playtime</label>
-      <div class="control">
-        <div>
-          <select id="playtime" class="select">
-            <option value=""> </option>
-            <option value="about 30 minutes">about 30 minutes</option>
-            <option value="about 60 minutes">about 60 minutes</option>
-            <option value="about 90 minutes">about 90 minutes</option>
-            <option value="over 90 minutes">over 90 minutes</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    {{! submit new game form }}
-    <div class="field is-grouped">
-      <div class="control">
-        <button id="submit-game" class="button is-link">Submit</button>
-      </div>
-      <div class="control">
-        <button class="button is-link is-light">Cancel</button>
-      </div>
-    </div>
-  </form>
+  </div>
 </section>
 <script src="./js/shelf.js"></script>
