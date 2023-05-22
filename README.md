@@ -14,8 +14,8 @@
 
 ## Our Process
 
-![alt image](./public/images/mock%20.png)
-![original](./public/images/original%20.png)
+![alt image](/Images/mock%20.png)
+![original](/Images/original%20.png)
 
 
 ## *Description*
@@ -28,8 +28,8 @@ To use this application you will need to first sign up. Once signed up you can c
 
 ## *Application*
 
-![screenshot](./public/images/preview.png)
-![screenshot](./public/images/preview2.png)
+![screenshot](/Images/preview.png)
+![screenshot](/Images/preview2.png)
 
 
 - [Deployed application](https://ontheshelf.herokuapp.com/)
@@ -40,7 +40,7 @@ To use this application you will need to first sign up. Once signed up you can c
 ***Lindsey Isaac*** https://github.com/LindseyIsaac<br>
 ***Matt Montiel*** https://github.com/MatthewMontiel<br>
 ***M Vincent Richards*** https://github.com/vrich88<br>
-![screenshot](/ontheshelf/public/images/theteam.png)
+![screenshot](/Images/theteam.png)
 ## *Collaborators*
 ***Rachel Solov-TA*** Bulma consultant, coding guidence, and ESP<br>
 ***Derek Beckford-TA***coding guidence and ESP<br>
