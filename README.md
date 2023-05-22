@@ -14,8 +14,8 @@
 
 ## Our Process
 
-![mock](./public/images/mock%20.png)
-![original](./public/images/original%20.png)
+![mock](./images/mock%20.png)
+![original](./images/original%20.png)
 
 
 ## *Description*
@@ -28,8 +28,8 @@ To use this application you will need to first sign up. Once signed up you can c
 
 ## *Application*
 
-![preview](./public/images/preview.png)
-![preview2](./public/images/preview2.png)
+![preview](./images/preview.png)
+![preview2](./images/preview2.png)
 
 
 - [Deployed application]()
@@ -40,7 +40,7 @@ To use this application you will need to first sign up. Once signed up you can c
 ***Lindsey Isaac*** https://github.com/LindseyIsaac<br>
 ***Matt Montiel*** https://github.com/MatthewMontiel<br>
 ***M Vincent Richards*** https://github.com/vrich88<br>
-![team](/ontheshelf/public/images/theteam.png)
+![team](./images/theteam.png)
 ## *Collaborators*
 ***Rachel Solov-TA*** Bulma consultant, coding guidence, and ESP<br>
 ***Derek Beckford-TA***coding guidence and ESP<br>
