@@ -14,8 +14,8 @@
 
 ## Our Process
 
-![screenshot](/ontheshelf/public/images/mock%20.png)
-![big](/ontheshelf/public/images/original%20.png)
+![mock](./public/images/mock%20.png)
+![original](./public/images/original%20.png)
 
 
 ## *Description*
@@ -28,8 +28,8 @@ To use this application you will need to first sign up. Once signed up you can c
 
 ## *Application*
 
-![preview](/ontheshelf/public/images/preview.png)
-![preview2](/ontheshelf/public/images/preview2.png)
+![preview](./public/images/preview.png)
+![preview2](./public/images/preview2.png)
 
 
 - [Deployed application]()
