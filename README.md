@@ -14,7 +14,9 @@
 
 ## Our Process
 
-![screenshot]()
+![screenshot](/ontheshelf/public/images/mock%20.png)
+![big](/ontheshelf/public/images/original%20.png)
+
 
 ## *Description*
 
@@ -26,20 +28,20 @@ To use this application you will need to first sign up. Once signed up you can c
 
 ## *Application*
 
-![alt text]()
+![preview](/ontheshelf/public/images/preview.png)
+![preview2](/ontheshelf/public/images/preview2.png)
+
 
 - [Deployed application]()
 
 ## *Contributers*
-
-***M Vincent Richards*** https://github.com/vrich88<br>
-***Matt Montiel*** https://github.com/MatthewMontiel<br>
 ***Danny Cohen*** https://github.com/dctristero<br>
 ***Jacqueline Martinez*** https://github.com/JackieAmartinez<br>
 ***Lindsey Isaac*** https://github.com/LindseyIsaac<br>
-
+***Matt Montiel*** https://github.com/MatthewMontiel<br>
+***M Vincent Richards*** https://github.com/vrich88<br>
+![team](/ontheshelf/public/images/theteam.png)
 ## *Collaborators*
-
 ***Rachel Solov-TA*** Bulma consultant, coding guidence, and ESP<br>
 ***Derek Beckford-TA***coding guidence and ESP<br>
 ***Matthew Calimbas*** Tutor<br>
